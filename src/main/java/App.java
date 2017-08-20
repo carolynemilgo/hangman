@@ -5,16 +5,16 @@ import java.util.Arrays;
 
   public class App {
   public static void main(String[] args) {
-    List<String> availableWords= Arrays.asList("One", "Carol", "Three", "Four");
-    Game thisGame=new Game();
+    List<String> availableWords= Arrays.asList("One", "Carol", "Three", "Four");//pass values into the List to be picked randomnly
+    Game thisGame=new Game();//creates new instance of Game
     String myWord=thisGame.GenerateWord(availableWords);
     thisGame.guessWord=myWord;
-    thisGame.output=thisGame.wordCount(myWord);//returns dashes
+    thisGame.output=thisGame.wordCount(myWord);//returns dashes based on the number of characters the word has
     String myAnswer="";
     String[] splitWord=thisGame.splitPickedWord(myWord);
     Console myConsole=System.console();
     Boolean dead=false;
-    Integer maxLives=6;
+    Integer maxLives=9;
 
     do
     {
@@ -34,7 +34,9 @@ import java.util.Arrays;
     if (dead){
       System.out.println("Sorry, you were hanged before you could finish guessing");
     }
-    System.out.println("Game over");
+else{
+    System.out.println("Game over, Good job!!!");
+}
 }
 
 }

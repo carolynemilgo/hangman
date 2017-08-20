@@ -16,10 +16,12 @@ public String GenerateWord(List<String> availableWords){
   Random randomWord = new Random();
   int myIndex = randomWord.nextInt(availableWords.size()); //picks a random number
   String guessWord=availableWords.get(myIndex);//store the picked word at index i in String guessWord
-  return guessWord;//random word picked from our array
+  return guessWord;//random word picked from our List
 
 
 }
+//function to split the rabdomly picked into dashes equivalent to the string size
+
   public String wordCount(String guessWord){
     //String output="";
     for(int i=0;i<guessWord.length();i++){
@@ -28,6 +30,7 @@ public String GenerateWord(List<String> availableWords){
     return output;
 
   }
+//split 
 public String[] splitPickedWord(String guessWord){
   String[] resultingSplit=guessWord.split("");
   return resultingSplit;
