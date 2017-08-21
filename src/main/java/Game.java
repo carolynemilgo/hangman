@@ -5,19 +5,34 @@ import java.io.Console;
 import java.util.ArrayList;
 
 
-
 public class Game{
+private String output="";
+private String guessWord;
 
-public String output="";
-//public String letter;
-public String guessWord;
+
+//setter methods for private variables and getter methods for returning variables
+public void setGuessWord(String userWord) {
+  guessWord=userWord;
+}
+
+public void setOutput(String userOutput){
+       output=userOutput;
+     }
+
+public String getGuessWord(){
+  return guessWord;
+}
+
+public String getOutput(){
+  return output;
+}
+
 
 public String GenerateWord(List<String> availableWords){
   Random randomWord = new Random();
   int myIndex = randomWord.nextInt(availableWords.size()); //picks a random number
   String guessWord=availableWords.get(myIndex);//store the picked word at index i in String guessWord
   return guessWord;//random word picked from our List
-
 
 }
 //function to split the rabdomly picked into dashes equivalent to the string size
@@ -30,7 +45,7 @@ public String GenerateWord(List<String> availableWords){
     return output;
 
   }
-//split 
+//split
 public String[] splitPickedWord(String guessWord){
   String[] resultingSplit=guessWord.split("");
   return resultingSplit;
